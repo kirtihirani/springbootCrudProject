@@ -17,8 +17,8 @@ public class StudentService {
 
     }
 
-    public void addStudent(Student student){
-        this.studentRepo.save(student);
+    public Student addStudent(Student student){
+       return this.studentRepo.save(student);
     }
 
     public void updateStudent(String id,  Student student){
@@ -32,5 +32,9 @@ public class StudentService {
     public Student getAStudent(String id){
         return this.studentRepo.findById(id).get();
         //return null;
+    }
+
+    public List<Student> getByCity(String city){
+        return this.studentRepo.findByCity(city);
     }
 }

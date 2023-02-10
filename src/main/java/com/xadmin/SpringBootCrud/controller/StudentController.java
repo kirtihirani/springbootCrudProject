@@ -25,6 +25,12 @@ public class StudentController {
         return this.studentService.getAStudent(id);
     }
 
+    @GetMapping("/getstudent/{city}")
+    public List<Student> getByCity(@PathVariable String city){
+
+        return this.studentService.getByCity(city);
+    }
+
     @PostMapping ("/createstudent")
     public void addStudent(@RequestBody Student student){
         this.studentService.addStudent(student);
